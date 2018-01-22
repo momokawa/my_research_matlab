@@ -18,6 +18,7 @@ bracket_6_7_val = bracket_6_7_joint_torque.bracket_6_7_joint_torque.Data;
 time = bracket_1_2_joint_torque.bracket_1_2_joint_torque.Time;
 
 f = figure;
+f.Position = [0 0 1000 1000]; % resize the image
 p = uipanel('Parent', f, 'BorderType', 'none');
 p.Title = 'Bit title here';
 p.TitlePosition = 'centertop';
