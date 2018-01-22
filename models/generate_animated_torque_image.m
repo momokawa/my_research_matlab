@@ -24,7 +24,6 @@ p.TitlePosition = 'centertop';
 
 % add plot for 1_2_joint
 subplot(3,3,1,'Parent', p);
-axis([0, 10, -1*10^8, 1*10^8]);
 plot(time, bracket_1_2_val);
 title('1-2-joint');
 xlabel({'Time', '(sec)'});
@@ -35,7 +34,6 @@ hold off;
 
 % add plot for 2_3_joint
 subplot(3,3,2,'Parent', p);
-axis([0, 10, -1*10^8, 1*10^8]);
 plot(time, bracket_2_3_val);
 title('2-3-joint');
 xlabel({'Time', '(sec)'});
@@ -46,7 +44,6 @@ hold off;
 
 % add plot for 3_4_joint
 subplot(3,3,3,'Parent', p);
-axis([0, 10, -1*10^8, 1*10^8]);
 plot(time, bracket_3_4_val);
 title('3-4-joint');
 xlabel({'Time', '(sec)'});
@@ -58,7 +55,6 @@ hold off;
 
 % add plot for 4_5_joint
 subplot(3,3,4,'Parent', p);
-axis([0, 10, -1*10^8, 1*10^8]);
 plot(time, bracket_4_5_val);
 title('4-5-joint');
 xlabel({'Time', '(sec)'});
@@ -70,7 +66,6 @@ hold off;
 
 % add plot for 5_6_joint
 subplot(3,3,5,'Parent', p);
-axis([0, 10, -1*10^8, 1*10^8]);
 plot(time, bracket_5_6_val);
 title('5-6-joint');
 xlabel({'Time', '(sec)'});
@@ -109,6 +104,7 @@ for k = 2:length(time)
     frame = getframe(gcf);
     b = toc(a);
     if b > 1.0
+        
         writeVideo(writerObj, frame);
         a = tic;
     end
