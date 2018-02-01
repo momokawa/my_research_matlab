@@ -38,5 +38,3 @@ title("bracket_6_7_joint_torque");
 print(fig6, "sample_trajectory_2/image/bracket_6_7_joint_torque", '-dpng');
 
 clear;
-
-% TODO: calculate max i from max torque

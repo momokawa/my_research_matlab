@@ -1,5 +1,5 @@
 % geenerate animated torque image
-writerObj = VideoWriter('torque_animation.avi');
+writerObj = VideoWriter('sample_trajectory_3/video/torque_animation.avi');
 open(writerObj);
 bracket_1_2_joint_torque = load('bracket_1_2_joint_torque.mat');
 bracket_2_3_joint_torque = load('bracket_2_3_joint_torque.mat');
@@ -86,6 +86,8 @@ hold on;
 p6 = plot(time(1), bracket_6_7_val(1), 'o', 'MarkerFaceColor', 'red');
 hold off;
 
+% all-6-images-in-one
+print(f, 'sample_trajectory_2/all-in-one-image-torque', '-dpng');
 
 % ------------ animation ---- 
 a = tic;

@@ -1,0 +1,3 @@
+- add txt file here
+- execute generate_joint_mat_file
+- you will get sample trajectory files
