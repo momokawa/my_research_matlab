@@ -20,20 +20,21 @@ bracket_5_6_joint_angle_array =  (180.0/pi)*table2array(sample_trajectory(:, 15)
 bracket_6_7_joint_angle_array =  (180.0/pi)*table2array(sample_trajectory(:, 16));
 
 f = figure;
-plot(time_array, bracket_1_2_joint_angle_array);
+% f.Position = [0 0 1000 1000]; % resize the image
+plot(time_array, bracket_1_2_joint_angle_array, 'r', 'LineWidth', 1.2);
 
 hold on;
-plot(time_array, bracket_2_3_joint_angle_array);
-plot(time_array, bracket_3_4_joint_angle_array);
-plot(time_array, bracket_4_5_joint_angle_array);
-plot(time_array, bracket_5_6_joint_angle_array);
-plot(time_array, bracket_6_7_joint_angle_array);
+plot(time_array, bracket_2_3_joint_angle_array, '--r', 'LineWidth', 1.2);
+plot(time_array, bracket_3_4_joint_angle_array, 'b', 'LineWidth', 1.2);
+plot(time_array, bracket_4_5_joint_angle_array, '--b', 'LineWidth', 1.2);
+plot(time_array, bracket_5_6_joint_angle_array, 'g', 'LineWidth', 1.2);
+plot(time_array, bracket_6_7_joint_angle_array, '--g', 'LineWidth', 1.2);
 
-
-legend('Location', 'eastoutside');
-legend('bracket_1_2-joint', 'bracket_2_3-joint', 'bracket_3_4-joint', 'bracket_4_5-joint', 'bracket_5_6-joint', 'bracket_6_7-joint');
-xlabel('Time (sec)');
-ylabel('Angle (degree)');
+legend({'joint-1', 'joint-2', 'joint-3', 'joint-4', 'joint-5', 'joint-6'});
+xlabel('Time (sec)', 'FontWeight', 'bold' );
+ylabel('Angle (degree)',  'FontWeight', 'bold');
+yticks([-360 -270 -180 -90 0 90 180 270 360])
+xlim([0 5]);
 hold off;
 
 print(f, 'sample_trajectory_3/image/all-in-one-image-angle', '-dpng');
